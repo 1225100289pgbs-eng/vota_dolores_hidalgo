@@ -1,30 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:vota_dolores_hidalgo/modelos/opcion_votacion.dart';
-import 'package:vota_dolores_hidalgo/modelos/votacion.dart';
-import 'package:vota_dolores_hidalgo/logica/resultado_voto.dart';
-import 'package:vota_dolores_hidalgo/logica/servicio_votacion.dart';
+Imagen inicial de creación del proyecto
+<img width="1917" height="538" alt="image" src="https://github.com/user-attachments/assets/0e1827ee-4546-47ee-a2a6-b682f8450eb7" />
 
-Votacion _crearVotacionDePrueba({DateTime? fechaCierre}) {
-  return Votacion(
-    pregunta: 'Pregunta de prueba',
-    opciones: [
-      OpcionVotacion(id: 'op1', texto: 'Opcion 1'),
-      OpcionVotacion(id: 'op2', texto: 'Opcion 2'),
-    ],
-    fechaCierre: fechaCierre ?? DateTime.now().add(const Duration(days: 7)),
-  );
-}
+<img width="1931" height="529" alt="image" src="https://github.com/user-attachments/assets/88b0a138-c035-4200-8d30-4b981f69f278" />
 
-void main() {
-  test('registrar un voto valido incrementa el contador de esa opcion', () {
-    final votacion = _crearVotacionDePrueba();
-    final servicio = ServicioVotacion(votacion);
-
-    final resultado = servicio.registrarVoto(idUsuario: 'user1', idOpcion: 'op1');
-
-    expect(resultado, ResultadoVoto.exitoso);
-    expect(votacion.opciones[0].votos, 1);
-  });
-}
 
 
